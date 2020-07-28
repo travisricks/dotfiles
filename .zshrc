@@ -81,10 +81,11 @@ CDPATH=.:$HOME:$HOME/code:$HOME/Desktop
 SCARF_ANALYTICS=false
 
 # Custom Aliases
-alias code="\"/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin/code\""
 alias c="code .";
-alias ll="ls -1a";
-alias ..="cd ../";
+alias ll="ls -la";
+alias ..="cd .. && clear";
+alias s="cd ~/Sites";
+alias e="clear";
 alias ..l="cd ../ && ll";
 alias pg="echo 'Pinging Google' && ping www.google.com";
 alias vz="vim ~/.zshrc";
@@ -95,13 +96,8 @@ alias d="cd ~/code";
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
-alias kcd-oss="npx -p yo -p generator-kcd-oss -c 'yo kcd-oss'";
-function crapp { cp -R ~/.crapp "$@"; }
-function mcrapp { cp -R ~/.mcrapp "$@"; }
 alias npm-update="npx npm-check -u";
 alias yarn-update="yarn upgrade-interactive --latest";
-alias lt="pushd ~/code/love-texts && serve || popd";
-alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 alias dont_index_node_modules='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;';
 
 ## git aliases
@@ -141,8 +137,9 @@ alias ypm="echo \"Installing deps without lockfile and ignoring engines\" && yar
 alias git=hub
 
 # Custom functions
+shorten() { node ~/code/netlify-shorturls/node_modules/.bin/netlify-shortener "$1" "$2"; }
+
 mg () { mkdir "$@" && cd "$@" || exit; }
-shorten() { node ~/code/kcd.im/node_modules/.bin/netlify-shortener "$1" "$2"; }
 cdl() { cd "$@" && ll; }
 npm-latest() { npm info "$1" | grep latest; }
 killport() { lsof -i tcp:"$*" | awk 'NR!=1 {print $2}' | xargs kill -9 ;}
@@ -158,12 +155,5 @@ function quit () {
 }
 
 autoload -Uz compinit && compinit
-# Bash completion
-# TODO: couldn't get this to work with zsh...
-# autoload bashcompinit
-# bashcompinit
-# if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
-# . "$(brew --prefix)/etc/bash_completion"
-# fi
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).

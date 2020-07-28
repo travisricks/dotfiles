@@ -69,6 +69,12 @@ ln -s "${HOME}/dotfiles/.gitconfig" "${HOME}/.gitconfig"
 # ln -s "${HOME}/dotfiles/.vimrc" "${HOME}/.vimrc"
 # ln -s "${HOME}/dotfiles/.vimrc-parts" "${HOME}/.vimrc-parts"
 
+echo "installing gatsby-cli"
+yarn global add gatsby-cli
+
+echo "installing netlify-cli"
+yarn global add netlify-cli
+
 echo "making system modifications:"
 
 ###############################################################################
