@@ -33,7 +33,8 @@ echo "brew installing stuff"
 # ripgrep: rg is faster than alternatives
 # imagemagick: eventually I will need this for something
 # tree: really handy for listing out directories in text
-brew install git hub ripgrep imagemagick watchman tree \
+# mackup: backup of application settings: https://github.com/lra/mackup
+brew install git hub mackup ripgrep imagemagick watchman tree \
 yarn
 
 echo "installing node (via n-install)"
@@ -62,6 +63,8 @@ echo "run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub"
 
 echo "cloning dotfiles"
 git clone git@github.com:travisricks/dotfiles.git "${HOME}/dotfiles"
+# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
+rm -rf $HOME/.zshrc
 ln -s "${HOME}/dotfiles/.zshrc" "${HOME}/.zshrc"
 ln -s "${HOME}/dotfiles/.gitignore_global" "${HOME}/.gitignore_global"
 ln -s "${HOME}/dotfiles/.gitconfig" "${HOME}/.gitconfig"

@@ -1,5 +1,7 @@
 # dotfiles
 
+## Travis, [read your notes to set up a new Mac](https://www.notion.so/travisricks/Setting-up-a-new-Mac-46c82f3ef0aa4c6e95f005d76dc6bfa8)
+
 ## Sources
 
 ### dotfiles:
