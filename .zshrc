@@ -62,16 +62,23 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 
 # PATH ALTERATIONS
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$PATH:/opt/yarn-1.22.4/bin"
+export PATH="$(yarn global bin):$PATH"
+export ANDROID_SDK=/Users/travis/Library/Android/sdk
+export PATH=/Users/travis/Library/Android/sdk/platform-tools:$PATH
+eval "$(rbenv init -)"
+
 ## Node
-PATH="/usr/local/bin:$PATH:./node_modules/.bin";
 
 ## Yarn
-PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Custom bins
-PATH="$PATH:$HOME/.bin";
+# PATH="$PATH:$HOME/.bin";
 # dotfile bins
-PATH="$PATH:$HOME/.my_bin";
+# PATH="$PATH:$HOME/.my_bin";
 
 # CDPATH ALTERATIONS
 CDPATH=.:$HOME:$HOME/code:$HOME/Desktop
@@ -137,7 +144,7 @@ alias ypm="echo \"Installing deps without lockfile and ignoring engines\" && yar
 alias git=hub
 
 # Custom functions
-shorten() { node ~/code/netlify-shorturls/node_modules/.bin/netlify-shortener "$1" "$2"; }
+shorten() { node ~/Sites/netlify-shorturls/node_modules/.bin/netlify-shortener "$1" "$2"; }
 
 mg () { mkdir "$@" && cd "$@" || exit; }
 cdl() { cd "$@" && ll; }
