@@ -26,7 +26,7 @@ mkdir -p "${HOME}/code"
 
 echo "installing homebrew"
 # install homebrew https://brew.sh
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 echo "brew installing stuff"
 # hub: a github-specific version of git
@@ -35,17 +35,14 @@ echo "brew installing stuff"
 # tree: really handy for listing out directories in text
 # mackup: backup of application settings: https://github.com/lra/mackup
 brew install git hub mackup ripgrep imagemagick watchman tree \
-yarn
+wget yarn
 
 echo "installing node (via n-install)"
-curl -L https://git.io/n-install | bash
+# curl -L https://git.io/n-install | bash
+brew install n
 
 echo "node --version: $(node --version)"
 echo "npm --version: $(npm --version)"
-
-# echo "installing a few global npm packages"
-# npm install --global serve fkill-cli npm-quick-run \
-# semantic-release-cli npm-check-updates
 
 echo "installing GUI apps with brew cask"
 brew cask install 1password dash docker dropbox evernote expressvpn figma firefox \
@@ -197,9 +194,7 @@ install: \n\
   Manual Installs from Notion list \n\
 \n\
 -Restart Terminal.app\n\
--copy git config from your backup/re-login \n\
 -run 'pbcopy < ~/.ssh/id_rsa.pub' and paste that into GitHub \n\
--copy .npmrc from your backup/re-login \n\
 -login to literally everything \n\
 -double check Notion list \n\
 "
