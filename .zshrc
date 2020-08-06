@@ -69,7 +69,7 @@ export PATH="$PATH:/opt/yarn-1.22.4/bin"
 export PATH="$(yarn global bin):$PATH"
 export ANDROID_SDK=/Users/travis/Library/Android/sdk
 export PATH=/Users/travis/Library/Android/sdk/platform-tools:$PATH
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 ## Node
 
@@ -161,6 +161,6 @@ function quit () {
   fi
 }
 
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
