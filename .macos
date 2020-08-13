@@ -48,7 +48,7 @@ echo "installing GUI apps with brew cask"
 brew cask install 1password dash docker dropbox evernote expressvpn figma firefox \
 github google-chrome insomnia iterm2 itsycal kaleidoscope launchbar notion omnifocus \
 postgres postico prepros rectangle rocket runjs sizzy sketch sketch-toolbox skitch \
-skyfonts skype slack sourcetree smartsvn spotify sublime-text textexpander visual-studio-code vlc xscope zoomus
+skyfonts skype slack smartsvn sourcetree spotify sublime-text textexpander visual-studio-code vlc xscope zoomus
 
 echo "Generating an RSA token for GitHub"
 mkdir -p ~/.ssh
