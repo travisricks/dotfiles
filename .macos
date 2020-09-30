@@ -34,7 +34,8 @@ echo "brew installing stuff"
 # imagemagick: eventually I will need this for something
 # tree: really handy for listing out directories in text
 # mackup: backup of application settings: https://github.com/lra/mackup
-brew install ffmpeg gifsicle git hub imagemagick mackup p7zip python-markdown ripgrep tree watchman wget yarn
+brew install git hub mackup ripgrep imagemagick watchman tree \
+wget yarn
 
 echo "installing node (via n-install)"
 # curl -L https://git.io/n-install | bash
@@ -43,9 +44,11 @@ brew install n
 echo "node --version: $(node --version)"
 echo "npm --version: $(npm --version)"
 
-# !!! Review this list before installing all of these
 echo "installing GUI apps with brew cask"
-brew cask install 1password android-studio cyberduck dash docker dropbox evernote expressvpn figma firefox forticlient github google-chrome insomnia iterm2 itsycal kaleidoscope launchbar notion omnifocus postgres postico postman prepros rectangle rocket runjs sizzy sketch sketch-toolbox skitch skyfonts skype slack smartsvn sourcetree spotify sublime-text textexpander the-unarchiver visual-studio-code vlc xscope zoomus
+brew cask install 1password dash docker dropbox evernote expressvpn figma firefox \
+github google-chrome insomnia iterm2 itsycal kaleidoscope launchbar notion omnifocus \
+postgres postico prepros rectangle rocket runjs sizzy sketch sketch-toolbox skitch \
+skyfonts skype slack smartsvn sourcetree spotify sublime-text textexpander visual-studio-code vlc xscope zoomus
 
 echo "Generating an RSA token for GitHub"
 mkdir -p ~/.ssh
