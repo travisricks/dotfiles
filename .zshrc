@@ -106,6 +106,8 @@ alias deleteDSFiles="find . -name '.DS_Store' -type f -delete"
 alias npm-update="npx npm-check -u";
 alias yarn-update="yarn upgrade-interactive --latest";
 alias dont_index_node_modules='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;';
+alias ye="yarn electron:serve";
+alias yi="yarn install";
 
 ## git aliases
 function gc { git commit -m "$@"; }
