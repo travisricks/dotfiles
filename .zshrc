@@ -164,3 +164,6 @@ function quit () {
 # autoload -Uz compinit && compinit
 export NVS_HOME="$HOME/.nvs"
 [ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
+alias pip=/usr/local/opt/python@3.8/bin/pip3
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+alias python=/usr/local/bin/python3
